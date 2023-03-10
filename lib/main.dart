@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:untitled4/login.dart';
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +13,6 @@ Future main() async{
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +34,31 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  TextEditingController patientnameController = TextEditingController();
-  TextEditingController caretakerpasswordController = TextEditingController();
+
+  Map<String, Object> loginmap = {};
+  getLoginDetails() async{
+    FirebaseFirestore.instance.collection("patient").get().then((myMockData) {
+      if(myMockData.docs.isNotEmpty){
+        for(int i=0;i<myMockData.docs.length ; i++){
+          print(myMockData.docs[i].data());
+          loginmap[myMockData.docs[i].data()['PatientName']]=myMockData.docs[i].data()["Attender"] ;
+        }
+      }
+      print(loginmap);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getLoginDetails();
+  }
 
   @override
   Widget build(BuildContext context) {
+    String patientName ="" ;
+    String careTakerName="" ;
+
     return Padding(
         padding: const EdgeInsets.all(9),
         child: ListView(
@@ -60,8 +81,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
               padding: const EdgeInsets.all(10),
               child: TextField(
-
-                controller: patientnameController,
+                onChanged: (value) {
+                  patientName = value ;
+                },
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Patient Name',
@@ -71,7 +93,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextField(
-                controller: caretakerpasswordController,
+                onChanged: (value) {
+                  careTakerName = value ;
+                },
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Caretaker Name',
@@ -89,8 +113,23 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   style: TextButton.styleFrom(primary: Colors.black,backgroundColor: Color.fromARGB(213, 166, 35, 0)),
                   child: const Text('Login', style:TextStyle(fontSize: 20.0),),
                   onPressed: () {
-                    print(patientnameController.text);
-                    print(caretakerpasswordController.text);
+                    print(patientName);
+                    print(careTakerName) ;
+                    if(!loginmap.containsKey(patientName)){
+                      print("not registered") ;
+                      // you have not registered yet
+                    }
+                    else if(loginmap[patientName] != careTakerName){
+                      print("wrong Care taker name") ;
+                    }
+                    else if(loginmap.containsKey(patientName) && loginmap[patientName] == careTakerName){
+                      //Successfully logged in
+                      print("logged in") ;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login(),),
+                      );
+                    }
                   },
                 )
             ),
@@ -113,3 +152,4 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ));
   }
 }
+
