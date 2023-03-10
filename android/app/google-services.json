@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "301822310762",
+    "firebase_url": "https://flutterip-1ddd8-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "flutterip-1ddd8",
+    "storage_bucket": "flutterip-1ddd8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301822310762:android:bc200a88a8e8e48dbfcd13",
+        "android_client_info": {
+          "package_name": "com.example.untitled4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301822310762-n8qi5r54h8in2g9r47u5o1h13bdoicmm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQxiO1fg_tE5DcyRJWm99CrSVVNxhDqBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301822310762-n8qi5r54h8in2g9r47u5o1h13bdoicmm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

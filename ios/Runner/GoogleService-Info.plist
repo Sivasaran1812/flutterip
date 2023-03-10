@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>301822310762-g7s2p411nqg4bocqkrnkip7kjbesi4u8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.301822310762-g7s2p411nqg4bocqkrnkip7kjbesi4u8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD_xy6_cicEqozQvfDBmfJ1H0fQa3o3TD8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>301822310762</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.untitled4</string>
+	<key>PROJECT_ID</key>
+	<string>flutterip-1ddd8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutterip-1ddd8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:301822310762:ios:c762af0ffb7bc0abbfcd13</string>
+	<key>DATABASE_URL</key>
+	<string>https://flutterip-1ddd8-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
