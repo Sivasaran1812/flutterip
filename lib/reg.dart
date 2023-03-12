@@ -92,6 +92,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ),
             ),
 
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextField(
+                controller: caretakerpasswordController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Caretaker Name',
+                ),
+              ),
+            ),
 
 
             Container(
