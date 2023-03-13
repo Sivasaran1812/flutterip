@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:untitled4/AttenderLogin.dart';
 import 'package:untitled4/HomeScreen.dart';
+import 'package:untitled4/buttonselection.dart';
 
 class PatientLogin extends StatefulWidget {
 
@@ -100,7 +101,7 @@ class _PatientLoginState extends State<PatientLogin> {
                         print("logged in") ;
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => HomeScreen(),),
+                          MaterialPageRoute(builder: (context) => selectionPage(),),
                         );
                       }
                     },
