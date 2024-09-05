@@ -15,5 +15,7 @@ It features voice messaging functionality to send notifications to attendants or
 
 ## Tools & Technologies:
 **Flutter**: For developing the cross-platform mobile interface.
+
 **Firebase**: For backend services like real-time notifications and state management.
+
 **Dart**: The programming language used in Flutter development.
